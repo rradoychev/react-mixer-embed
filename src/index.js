@@ -36,7 +36,7 @@ const ReactMixerEmbed = ({
   const embedClassName = "react-mixer-embed-wrapper";
 
   if (enableChat || chatOnly) {
-    if (enableChat) {
+    if (enableChat && !chatOnly) {
       return (
         <>
           <iframe 
@@ -50,7 +50,7 @@ const ReactMixerEmbed = ({
         </>
       );
     }
-    if (chatOnly) {
+    if (chatOnly && !enableChat) {
       return (
         <>
           <iframe 
