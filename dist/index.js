@@ -54,7 +54,6 @@ var ReactMixerEmbed = function ReactMixerEmbed(_ref) {
         src: "https://mixer.com/embed/player/".concat(channelName)
       }), _react.default.createElement("iframe", {
         className: "".concat(embedClassName, " chat"),
-        name: "radoslav",
         title: "Mixer chat embed for ".concat(channelName),
         src: "https://mixer.com/embed/chat/".concat(channelName)
       }));
