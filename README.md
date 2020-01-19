@@ -49,3 +49,8 @@ Chat only embed:<br />
   chatOnly: true
 }} />
 ```
+
+This package is only if you want to have a react component inside your directory, 
+which you reuse across the application.
+
+However, for very basic and most lightweight solution, head to https://dev.mixer.com/guides/embeds/introduction
