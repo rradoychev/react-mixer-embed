@@ -47,7 +47,7 @@ var ReactMixerEmbed = function ReactMixerEmbed(_ref) {
   var embedClassName = "react-mixer-embed-wrapper";
 
   if (enableChat || chatOnly) {
-    if (enableChat) {
+    if (enableChat && !chatOnly) {
       return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement("iframe", {
         className: "".concat(embedClassName, " video"),
         title: "Mixer video embed for ".concat(channelName),
@@ -59,7 +59,7 @@ var ReactMixerEmbed = function ReactMixerEmbed(_ref) {
       }));
     }
 
-    if (chatOnly) {
+    if (chatOnly && !enableChat) {
       return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement("iframe", {
         className: "".concat(embedClassName, " chat"),
         title: "Mixer video embed for ".concat(channelName),
