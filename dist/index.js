@@ -3,11 +3,11 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 /**
  * ReactMixerEmbed
@@ -44,11 +44,11 @@ var ReactMixerEmbed = function ReactMixerEmbed(_ref) {
       video = _options$video === void 0 ? true : _options$video,
       chat = options.chat;
   var embedClassName = "react-mixer-embed-wrapper";
-  return _react.default.createElement(_react.default.Fragment, null, video && _react.default.createElement("iframe", {
+  return _react["default"].createElement(_react["default"].Fragment, null, video && _react["default"].createElement("iframe", {
     className: "".concat(embedClassName, " video"),
     title: "Mixer video embed for ".concat(channel),
     src: "https://mixer.com/embed/player/".concat(channel)
-  }), chat && _react.default.createElement("iframe", {
+  }), chat && _react["default"].createElement("iframe", {
     className: "".concat(embedClassName, " chat"),
     title: "Mixer chat embed for ".concat(channel),
     src: "https://mixer.com/embed/chat/".concat(channel)
@@ -56,4 +56,4 @@ var ReactMixerEmbed = function ReactMixerEmbed(_ref) {
 };
 
 var _default = ReactMixerEmbed;
-exports.default = _default;
+exports["default"] = _default;
