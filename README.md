@@ -1,5 +1,6 @@
+Lightweight component for embedding mixer.com video and chat into React applications.
+
 # React Mixer Embed Video and Chat
-### Lightweight component for embedding mixer into React applications.
 
 ### Available options:
  * =============================================================================
