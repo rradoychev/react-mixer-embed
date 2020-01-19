@@ -1,76 +1,56 @@
 /**
  * ReactMixerEmbed
  * 
- * @description: Lightweight component for embedding mixer into any Javascript application.
+ * @description: Lightweight component for embedding mixer into React applications.
  * @author: rradoychev
  * 
  * Available options:
  * =============================================================================
  * DEFAULT SETTINGS - the video will be embed by default. 
  * Use the following options to change the settings:
- * enableChat (optional) - set to true to enable chat together with the video.
- * chatOnly (optional) - set to true to embed only the chat.
- * channelName - the channel that you want to embed from.
+ * video (optional) - can set to false to disable the video.
+ * chat (optional) - set to true to embed chat next to the video.
+ * channel - the channel name.
  * =============================================================================
  * 
  * Example usage:
  * <ReactMixerEmbed options={{
- *  channelName: "mixer",
- *  enableChat: true
+ *  channel: "mixer",
+ *  chat: true
  * }} />
  * 
  * @param {*} options Add options to the embedded element
  */
 
 import React from 'react';
-import './react-mixer-embed.css';
 
 const ReactMixerEmbed = ({
   options = {
-    channelName: "mixer", 
-    enableChat: false, 
-    chatOnly: false
+    channel: "mixer", 
+    video: true,
+    chat: false
   }
 }) => {
-  const { channelName, enableChat, chatOnly } = options;
+  const { channel, video = true, chat } = options;
   const embedClassName = "react-mixer-embed-wrapper";
 
-  if (enableChat || chatOnly) {
-    if (enableChat && !chatOnly) {
-      return (
-        <>
-          <iframe 
-            className={`${embedClassName} video`}
-            title={`Mixer video embed for ${channelName}`} 
-            src={`https://mixer.com/embed/player/${channelName}`}></iframe>
-          <iframe 
-            className={`${embedClassName} chat`}
-            title={`Mixer chat embed for ${channelName}`} 
-            src={`https://mixer.com/embed/chat/${channelName}`}></iframe>
-        </>
-      );
-    }
-    if (chatOnly && !enableChat) {
-      return (
-        <>
-          <iframe 
-            className={`${embedClassName} chat`}
-            title={`Mixer video embed for ${channelName}`} 
-            src={`https://mixer.com/embed/chat/${channelName}`}></iframe>
-        </>
-      );
-    }
-  }
-  else {
-    return (
-      <>
+  return (
+    <>
+      {video &&
         <iframe 
           className={`${embedClassName} video`}
-          title={`Mixer video embed for ${channelName}`} 
-          src={`https://mixer.com/embed/player/${channelName}`}></iframe>
-      </>
-    );
-  }
+          title={`Mixer video embed for ${channel}`} 
+          src={`https://mixer.com/embed/player/${channel}`}></iframe>
+      }
+
+      {chat && 
+        <iframe 
+          className={`${embedClassName} chat`}
+          title={`Mixer chat embed for ${channel}`} 
+          src={`https://mixer.com/embed/chat/${channel}`}></iframe>
+      }
+    </>
+  );
 }
 
 export default ReactMixerEmbed;

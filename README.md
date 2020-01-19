@@ -6,9 +6,9 @@ Lightweight component for embedding mixer.com video and chat into React applicat
  * =============================================================================
  * DEFAULT SETTINGS - the video will be embed by default. 
  * Use the following options to change the settings:
- * enableChat (optional) - set to true to enable chat together with the video.
- * chatOnly (optional) - set to true to embed only the chat.
- * channelName - the channel that you want to embed from.
+ * video (optional) - can set to false to disable the video.
+ * chat (optional) - set to true to embed chat next to the video.
+ * channel - the channel name.
  * =============================================================================
 
 
@@ -30,15 +30,15 @@ Use one of the following examples to embed:
 Default embed:
 ```
 <ReactMixerEmbed options={{ 
-  channelName: "mixer" 
+  channel: "mixer" 
 }} />
 ```
 
 Video and chat embed:<br />
 ```
 <ReactMixerEmbed options={{ 
-  channelName: "mixer",
-  enableChat: true
+  channel: "mixer",
+  chat: true
 }} />
 ```
 
@@ -46,7 +46,8 @@ Chat only embed:<br />
 ```
 <ReactMixerEmbed options={{ 
   channelName: "mixer",
-  chatOnly: true
+  video: false,
+  chat: true
 }} />
 ```
 
